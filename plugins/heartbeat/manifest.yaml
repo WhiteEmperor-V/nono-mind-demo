@@ -1,0 +1,6 @@
+name: heartbeat
+version: 0.1
+loop_type: continuous
+subscribes: []
+publishes: [heartbeat]
+entry: main.py

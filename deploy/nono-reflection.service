@@ -1,0 +1,8 @@
+[Unit]
+Description=Nono reflection 器官(日记+主人模型)
+
+[Service]
+Type=oneshot
+WorkingDirectory=/root/nono-mind
+Environment=PYTHONPATH=/root/nono-mind
+ExecStart=/usr/local/lib/hermes-agent/venv/bin/python3 organs/reflection.py

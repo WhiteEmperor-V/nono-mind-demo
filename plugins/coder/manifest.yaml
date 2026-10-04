@@ -1,0 +1,16 @@
+# 器官插件清单: coder(编程loop) — 装编程插件=会编程; 可开多实例
+organ: coder
+version: 0.1
+description: "编程器官: 写代码/执行/调试/自进化; 装几个插件决定它多专精"
+instances: 2            # 大loop可动态开 coder-1 / coder-2 两个同功能小loop
+plugins:
+  - name: code_sandbox
+    type: active
+    provides: [code_task]
+    requires_skills: [coding-python]
+capabilities:
+  - name: code_task
+    description: "编写和执行Python/Bash代码解决任务：写脚本、处理数据、调试程序、文件批处理、自动化操作。执行失败会自己分析报错修正，不会的API/库会自己上网查文档学习（学到的解法会记入知识库，越用越强）。何时用：分配了需要代码解决的任务。何时不用：纯聊天、画图、查行情。"
+    params_schema:
+      demand: "string(完整任务描述, 含输入输出预期)"
+    examples: ["写个脚本统计这个csv每列的总和", "把downloads里的图片按日期分文件夹整理"]

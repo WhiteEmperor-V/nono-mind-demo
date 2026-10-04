@@ -1,0 +1,13 @@
+[Unit]
+Description=Nono State Service (细胞外液唯一写者)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/nono-mind
+ExecStart=/usr/local/lib/hermes-agent/venv/bin/python3 state/server.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+state.db
+state.db-*
+__pycache__/
+*.pyc
+checkpoints/
+canvas/state.json
+canvas/images/
+canvas/pages/
+tools/disk_monitor.log
+weixin/
+gen_images/
+__pycache__/
+*.pyc
+.secrets.json
+coder_workspace/
+.secrets_gh.json
+obs_archive/

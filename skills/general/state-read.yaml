@@ -1,0 +1,3 @@
+name: state-read
+tier: general
+description: "读State信号池/公共记忆(core persona/master/facts, judgments判断账)看全局状态。何时用: 需要了解别人进度或共享判断时。何时不用: 要做写操作/改配置。"

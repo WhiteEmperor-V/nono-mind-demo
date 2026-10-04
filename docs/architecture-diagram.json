@@ -1,0 +1,319 @@
+{
+ "schema_version": 1,
+ "diagram_type": "architecture",
+ "meta": {
+  "title": "诺诺核心架构 · 大loop/细胞外液/小loop三明治(主人定稿)",
+  "visual_preset": "signal-flow"
+ },
+ "layout": {
+  "mode": "grid",
+  "cols": 6
+ },
+ "components": [
+  {
+   "id": "core",
+   "type": "backend",
+   "label": "大loop 意识核",
+   "sublabel": "听上报·派任务·主人模型·焦点",
+   "row": 0,
+   "col": 2
+  },
+  {
+   "id": "state",
+   "type": "database",
+   "label": "共享State 细胞外液",
+   "sublabel": "信号池·checkpoint·焦点·单写者",
+   "row": 1,
+   "col": 2
+  },
+  {
+   "id": "wechat",
+   "type": "backend",
+   "label": "消息loop",
+   "sublabel": "主动插件·微信/飞书",
+   "row": 2,
+   "col": 0
+  },
+  {
+   "id": "coding",
+   "type": "backend",
+   "label": "编程loop",
+   "sublabel": "主动插件·写码自检",
+   "row": 2,
+   "col": 1
+  },
+  {
+   "id": "reflection",
+   "type": "backend",
+   "label": "反思loop",
+   "sublabel": "主动插件·22点做梦",
+   "row": 2,
+   "col": 3
+  },
+  {
+   "id": "body_ctl",
+   "type": "external",
+   "label": "语义身体控制loop",
+   "sublabel": "主动插件·可拆可合",
+   "row": 2,
+   "col": 4
+  },
+  {
+   "id": "vision",
+   "type": "external",
+   "label": "视觉loop",
+   "sublabel": "主动插件·摄像头流",
+   "row": 2,
+   "col": 5
+  },
+  {
+   "id": "immune",
+   "type": "security",
+   "label": "免疫插件管理器",
+   "sublabel": "装载·健康·白细胞·四件套",
+   "row": 3,
+   "col": 2
+  },
+  {
+   "id": "wiki",
+   "type": "database",
+   "label": "wiki(被动)",
+   "sublabel": "四域知识库",
+   "row": 4,
+   "col": 0
+  },
+  {
+   "id": "hindsight",
+   "type": "database",
+   "label": "Hindsight(被动)",
+   "sublabel": "记忆流",
+   "row": 4,
+   "col": 1
+  },
+  {
+   "id": "skillimp",
+   "type": "database",
+   "label": "skill-impact(被动)",
+   "sublabel": "踩坑免疫",
+   "row": 4,
+   "col": 3
+  },
+  {
+   "id": "xianyu",
+   "type": "backend",
+   "label": "闲鱼爬虫(被动)",
+   "sublabel": "按需拉起",
+   "row": 4,
+   "col": 4
+  },
+  {
+   "id": "hw_cams",
+   "type": "cloud",
+   "label": "摄像头·麦克风",
+   "sublabel": "现役感官·一柜子设备",
+   "row": 5,
+   "col": 4
+  },
+  {
+   "id": "server1",
+   "type": "cloud",
+   "label": "Server1",
+   "sublabel": "4核4G·免费LLM",
+   "row": 5,
+   "col": 1
+  },
+  {
+   "id": "v100",
+   "type": "cloud",
+   "label": "V100(待购)",
+   "sublabel": "本地大脑",
+   "row": 5,
+   "col": 2
+  },
+  {
+   "id": "nas",
+   "type": "database",
+   "label": "NAS",
+   "sublabel": "备份",
+   "row": 5,
+   "col": 0
+  }
+ ],
+ "boundaries": [
+  {
+   "kind": "region",
+   "label": "大loop(统筹·并行自治)",
+   "wraps": [
+    "core"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "细胞外液(大loop与小loop之间·唯一可信源)",
+   "wraps": [
+    "state"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "小loop层(并行自治·身体可拆可合)",
+   "wraps": [
+    "wechat",
+    "coding",
+    "reflection",
+    "body_ctl",
+    "vision"
+   ]
+  },
+  {
+   "kind": "security-group",
+   "label": "免疫插件管理器(地基)",
+   "wraps": [
+    "immune"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "被动插件层(工具)",
+   "wraps": [
+    "wiki",
+    "hindsight",
+    "skillimp",
+    "xianyu"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "硬件层",
+   "wraps": [
+    "server1",
+    "v100",
+    "nas",
+    "hw_cams"
+   ]
+  }
+ ],
+ "connections": [
+  {
+   "from": "core",
+   "to": "state",
+   "label": "扫描·焦点·派发",
+   "fromSide": "bottom",
+   "toSide": "top",
+   "labelAt": [
+    640,
+    130
+   ]
+  },
+  {
+   "from": "wechat",
+   "to": "state",
+   "label": "直读写",
+   "fromSide": "top",
+   "toSide": "left",
+   "labelAt": [
+    140,
+    155
+   ]
+  },
+  {
+   "from": "coding",
+   "to": "state",
+   "label": "直读写",
+   "fromSide": "top",
+   "toSide": "left",
+   "labelAt": [
+    330,
+    155
+   ]
+  },
+  {
+   "from": "reflection",
+   "to": "state",
+   "label": "直读写",
+   "fromSide": "top",
+   "toSide": "bottom",
+   "labelAt": [
+    950,
+    155
+   ]
+  },
+  {
+   "from": "body_ctl",
+   "to": "state",
+   "label": "指令上行",
+   "fromSide": "top",
+   "toSide": "right",
+   "labelAt": [
+    1130,
+    155
+   ]
+  },
+  {
+   "from": "vision",
+   "to": "state",
+   "label": "画面写入",
+   "fromSide": "top",
+   "toSide": "right",
+   "labelAt": [
+    1330,
+    155
+   ]
+  },
+  {
+   "from": "state",
+   "to": "immune",
+   "label": "健康数据",
+   "fromSide": "bottom",
+   "toSide": "top",
+   "labelAt": [
+    300,
+    415
+   ]
+  },
+  {
+   "from": "immune",
+   "to": "state",
+   "label": "装载重启",
+   "fromSide": "top",
+   "toSide": "bottom",
+   "labelAt": [
+    300,
+    470
+   ]
+  },
+  {
+   "from": "hw_cams",
+   "to": "vision",
+   "label": "感官流",
+   "fromSide": "top",
+   "toSide": "bottom",
+   "labelAt": [
+    1250,
+    700
+   ]
+  },
+  {
+   "from": "server1",
+   "to": "state",
+   "label": "承载",
+   "fromSide": "top",
+   "toSide": "left",
+   "labelAt": [
+    330,
+    130
+   ]
+  },
+  {
+   "from": "nas",
+   "to": "server1",
+   "label": "备份",
+   "fromSide": "right",
+   "toSide": "left",
+   "labelAt": [
+    300,
+    790
+   ]
+  }
+ ]
+}

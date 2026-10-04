@@ -1,0 +1,18 @@
+[Unit]
+Description=Nono mind 意识核主循环(常驻; 含闲时反思)
+After=nono-state.service
+Requires=nono-state.service
+
+[Service]
+Type=simple
+WorkingDirectory=/root/nono-mind
+Environment=PYTHONPATH=/root/nono-mind
+# 闲时反思: 空闲10分钟触发轻反思, 两次至少间隔30分钟
+Environment=IDLE_REFLECT_SECONDS=600
+Environment=IDLE_REFLECT_MIN_INTERVAL=1800
+ExecStart=/usr/local/lib/hermes-agent/venv/bin/python3 core/loop.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

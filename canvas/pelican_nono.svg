@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff9a56"/>
+      <stop offset="60%" stop-color="#ffcd7a"/>
+      <stop offset="100%" stop-color="#ffe9c2"/>
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a3a46"/>
+      <stop offset="100%" stop-color="#23232c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 天空与地面 -->
+  <rect width="800" height="420" fill="url(#sky)"/>
+  <rect y="420" width="800" height="140" fill="url(#road)"/>
+  <circle cx="640" cy="110" r="52" fill="#fff3d6" opacity="0.9"/>
+  <circle cx="640" cy="110" r="70" fill="#fff3d6" opacity="0.25"/>
+
+  <!-- 远处波浪 -->
+  <path d="M0 395 Q60 380 120 395 T240 395 T360 395 T480 395 T600 395 T720 395 T840 395 V420 H0 Z" fill="#ffbe88" opacity="0.55"/>
+
+  <!-- 自行车 -->
+  <g stroke="#1c1c24" stroke-width="7" fill="none" stroke-linecap="round">
+    <circle cx="300" cy="450" r="62"/>
+    <circle cx="300" cy="450" r="10" fill="#1c1c24"/>
+    <circle cx="520" cy="450" r="62"/>
+    <circle cx="520" cy="450" r="10" fill="#1c1c24"/>
+    <!-- 车架 -->
+    <path d="M300 450 L400 330 L520 450 M400 330 L440 450 L300 450 M440 450 L520 450"/>
+    <!-- 车把+前叉 -->
+    <path d="M520 450 L545 318"/>
+    <path d="M522 316 Q545 305 562 316" stroke-width="8"/>
+    <!-- 座管 -->
+    <path d="M400 330 L385 295"/>
+    <path d="M355 293 L405 288" stroke-width="10"/>
+    <!-- 脚踏曲柄 -->
+    <circle cx="440" cy="450" r="16" fill="#e0552e" stroke="none"/>
+    <path d="M440 450 L470 485 M470 485 L470 500" stroke-width="6"/>
+  </g>
+  <!-- 辐条 -->
+  <g stroke="#8b8b96" stroke-width="2">
+    <path d="M300 388 L300 512 M238 450 L362 450 M258 408 L342 492 M342 408 L258 492"/>
+    <path d="M520 388 L520 512 M458 450 L582 450 M478 408 L562 492 M562 408 L478 492"/>
+  </g>
+
+  <!-- 鹈鹕 -->
+  <g>
+    <!-- 腿(踩踏板) -->
+    <path d="M410 300 Q440 380 470 498" stroke="#e8935a" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M415 295 Q390 380 408 470 Q414 486 430 495" stroke="#f2a76e" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M462 498 L486 498 M400 492 L424 492" stroke="#e8935a" stroke-width="7" stroke-linecap="round"/>
+
+    <!-- 身体 -->
+    <ellipse cx="390" cy="240" rx="118" ry="82" fill="#f7f7f4"/>
+    <path d="M280 250 Q270 205 320 185" stroke="#e8e8e2" stroke-width="6" fill="none"/>
+
+    <!-- 尾羽 -->
+    <path d="M282 232 Q225 215 218 172 Q260 185 285 205 Z" fill="#dcdcd4"/>
+    <path d="M280 248 Q215 245 195 210 Q250 220 283 225 Z" fill="#cfcfc6"/>
+
+    <!-- 翅膀(扶车把) -->
+    <path d="M430 210 Q505 235 550 310" stroke="#f7f7f4" stroke-width="26" fill="none" stroke-linecap="round"/>
+    <path d="M430 210 Q505 235 550 310" stroke="#e2e2da" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M545 302 Q560 308 562 316" stroke="#e8935a" stroke-width="9" fill="none" stroke-linecap="round"/>
+
+    <!-- 脖子(S弯) -->
+    <path d="M448 190 Q470 130 425 100 Q395 80 405 55" stroke="#f7f7f4" stroke-width="34" fill="none" stroke-linecap="round"/>
+
+    <!-- 头 -->
+    <circle cx="408" cy="58" r="30" fill="#f7f7f4"/>
+
+    <!-- 大嘴(鹈鹕标志) -->
+    <path d="M428 52 Q510 62 560 88 Q540 110 470 100 Q432 92 426 66 Z" fill="#f2a24b"/>
+    <path d="M428 64 Q505 78 552 92" stroke="#d98432" stroke-width="4" fill="none"/>
+    <!-- 喉囊 -->
+    <path d="M430 66 Q450 108 495 102 Q470 112 444 96 Q430 84 428 66 Z" fill="#f6c26b"/>
+
+    <!-- 眼睛 -->
+    <circle cx="404" cy="48" r="5.5" fill="#1c1c24"/>
+    <circle cx="406" cy="46" r="1.8" fill="#ffffff"/>
+  </g>
+
+  <!-- 速度线 -->
+  <g stroke="#ffffff" stroke-width="4" opacity="0.5" stroke-linecap="round">
+    <path d="M120 250 L190 250 M90 290 L170 290 M130 330 L200 330"/>
+  </g>
+
+  <!-- 署名 -->
+  <text x="400" y="545" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#8b949e" font-style="italic">nono · pelican riding a bicycle · SVG benchmark</text>
+</svg>

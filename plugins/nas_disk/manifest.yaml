@@ -1,0 +1,14 @@
+organ: nas_disk
+version: '0.1'
+description: 'NAS磁盘容量监控插件: 定时执行 df -h 采集挂载点使用率'
+loop_type: scheduled
+interval_sec: 300
+entry: main.py
+provides:
+- disk_check
+requires: []
+config:
+  mount_points:
+  - /mnt/nas
+  - /data
+  - /home

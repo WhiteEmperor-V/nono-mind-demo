@@ -1,0 +1,4 @@
+name: coding-python
+tier: specialized
+authorized_by: big_loop
+description: "写/改/测Python代码+git提交(编程类任务)。何时用: 写码/修bug/加功能。何时不用: 纯画图/纯反思。"

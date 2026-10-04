@@ -1,0 +1,9 @@
+organ: temp_monitor
+version: '0.1'
+description: '本机负载/磁盘监控插件: 定时执行 uptime 和 df -h 采集负载与磁盘使用率'
+loop_type: scheduled
+interval_sec: 60
+entry: main.py
+provides:
+- load_check
+requires: []

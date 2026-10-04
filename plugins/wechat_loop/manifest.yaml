@@ -1,0 +1,16 @@
+name: wechat_loop
+version: 0.1
+loop_type: continuous
+subscribes: [master_message, wechat_outbox]
+publishes: [master_message]
+entry: main.py
+# 器官插件清单字段(大loop扫描用): 微信通道器官, 无对外能力(只做通道), 故 capabilities 为空
+organ: wechat_loop
+description: "微信通道器官: 长轮询收消息→master_message, 排空outbox回消息"
+instances: 1
+plugins:
+  - name: wechat_channel
+    type: continuous
+    provides: []
+    requires_skills: [state-read, self-report]
+capabilities: []

@@ -1,0 +1,15 @@
+# 器官插件清单: wellness(自我体检/自愈)
+organ: wellness
+version: 0.1
+description: "体检器官: 检查LLM脑子/器官心跳/毒信号/日志暗病, 白名单静默自愈"
+instances: 1
+plugins:
+  - name: health_check
+    type: active
+    provides: [health_check]
+    requires_skills: [state-read]
+capabilities:
+  - name: health_check
+    description: "自我体检与静默自愈: 检查LLM脑子/各器官systemd心跳/信号池毒信号/器官日志暗病, 小病按白名单自己修(重启器官/清毒信号/调LLM降级链顺序), 只有大事才报主人。何时用: 主人要求自检/体检/查系统健康时。何时不用: 普通聊天、画图创作、跑代码任务、查行情。"
+    params_schema: {}
+    examples: ["你体检一下", "系统现在还好吗", "自己查查有没有病"]

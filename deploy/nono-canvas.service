@@ -1,0 +1,15 @@
+[Unit]
+Description=Nono Canvas Server (画布窗口, 崩了自动拉)
+After=network.target
+Wants=nono-state.service
+After=nono-state.service
+
+[Service]
+Type=simple
+WorkingDirectory=/root/nono-mind/canvas
+ExecStart=/usr/local/lib/hermes-agent/venv/bin/python canvas_server.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

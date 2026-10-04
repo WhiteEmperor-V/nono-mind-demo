@@ -1,0 +1,11 @@
+organ: message_loop
+version: '0.1'
+description: '消息小loop——接微信聊天频道直接回话(装dialogue对话能力), 不绕core主循环'
+loop_type: event
+subscribes:
+- master_message
+publishes:
+- wechat_outbox
+provides:
+- chat_reply
+entry: main.py

@@ -1,0 +1,9 @@
+[Unit]
+Description=Nono reflection 每晚22点
+
+[Timer]
+OnCalendar=*-*-* 22:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

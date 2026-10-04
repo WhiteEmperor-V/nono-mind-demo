@@ -1,0 +1,16 @@
+# 器官插件清单: canvas(画布创作)
+organ: canvas
+version: 0.1
+description: "画布器官: 按需求生成HTML页面/动画/可视化并推送到画布"
+instances: 1
+plugins:
+  - name: html_create
+    type: active
+    provides: [canvas_create]
+    requires_skills: [state-read]
+capabilities:
+  - name: canvas_create
+    description: "对画布进行创作: 根据主人的需求生成HTML页面/动画/可视化作品并推送到画布。何时用: 主人说'画一个/写一个页面/做个动画'等创作类请求。何时不用: 查行情数据、系统自检、纯文字聊天。"
+    params_schema:
+      demand: "string(完整创作需求描述)"
+    examples: ["画一个鹈鹕骑自行车", "写一个会动的时钟页面"]

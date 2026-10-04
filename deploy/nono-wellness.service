@@ -1,0 +1,20 @@
+[Unit]
+Description=Nono wellness 器官(自我体检医生, 5min一次静默自愈, 崩了自动拉)
+After=network.target nono-state.service
+Wants=nono-state.service
+# P2-8: 重启上限——防"改→回滚"死循环时疯狂重启刷日志(60s内最多5次)
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+WorkingDirectory=/root/nono-mind
+ExecStart=/usr/local/lib/hermes-agent/venv/bin/python -u organs/wellness.py
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+# P2-8: 内存上限, 防体检医生自己吃爆内存拖垮宿主
+MemoryMax=200M
+
+[Install]
+WantedBy=multi-user.target

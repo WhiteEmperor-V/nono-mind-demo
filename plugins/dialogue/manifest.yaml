@@ -1,0 +1,15 @@
+# 器官插件清单: dialogue(消息loop) — 大loop启动扫描, 能力注册进capabilities表
+organ: dialogue
+version: 0.1
+description: "对话器官: 收master_message, 生成回复; 装对话插件=会聊天"
+instances: 1            # 可开实例数(>1则大loop可动态开多个同功能小loop)
+plugins:
+  - name: chat
+    type: active         # active=有心跳/常驻; passive=被调用
+    provides: [chat]     # 这个插件给器官的能力(替代散写的CAPABILITIES)
+    requires_skills: [state-read, self-report]   # 需要的skill(通用/专精)
+capabilities:            # 能力声明(注册进immune/capabilities供大loop匹配)
+  - name: chat
+    description: "与主人日常对话交流：回答问题、闲聊、讨论想法、汇报身体状态。何时用：主人的消息是聊天性质、没有明确任务动作时。何时不用：需要画图、查数据、执行代码、系统自检时。"
+    params_schema: {}
+    examples: ["诺诺早上好", "今天感觉怎么样"]

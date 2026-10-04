@@ -1,0 +1,15 @@
+# 器官插件清单: reflection(反思/自检) — 能力跟插件走
+organ: reflection
+version: 0.1
+description: "反思器官: 闲时轻反思 + 每日总结 + 系统自检执行者"
+instances: 1
+plugins:
+  - name: self_check
+    type: active
+    provides: [self_check]
+    requires_skills: [state-read]
+capabilities:
+  - name: self_check
+    description: "系统自检：检查各器官健康、State服务、最近错误、画布状态，产出真实自检报告。何时用：主人要求自检/体检/查系统状态。何时不用：普通聊天、画图创作。"
+    params_schema: {}
+    examples: ["你自检一下", "系统体检"]

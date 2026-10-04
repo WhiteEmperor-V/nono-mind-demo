@@ -1,0 +1,4 @@
+name: quant-trading
+tier: specialized
+authorized_by: big_loop
+description: "量化策略评估/仓位判断(交易类)。何时用: 量化任务。何时不用: 日常对话/写码。"

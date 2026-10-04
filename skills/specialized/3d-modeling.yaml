@@ -1,0 +1,4 @@
+name: 3d-modeling
+tier: specialized
+authorized_by: big_loop
+description: "OpenSCAD/CadQuery生成3D模型+STL(建模类任务)。何时用: 要出可打印模型/外壳。何时不用: 写码/画图。"

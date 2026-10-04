@@ -1,0 +1,3 @@
+name: self-report
+tier: general
+description: "把自己的进度/结果写进 states/<自己>/progress 供其它loop互看。何时用: 任务有阶段性进展或卡住时。何时不用: 纯内部无产出。"
